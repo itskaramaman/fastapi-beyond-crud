@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from src.books.routes import router as book_router
+from src.auth.routes import router as auth_router
 from contextlib import asynccontextmanager
 from src.db.main import init_db
 
@@ -23,4 +24,5 @@ async def get_root():
 
 
 app.include_router(book_router)
+app.include_router(auth_router)
 
